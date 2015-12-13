@@ -1,6 +1,6 @@
 (function($) {
 
-	var listItem = $('<div class="draggable"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"><label></label><input type="text" class="todo-input"></div>');
+	var listItem = $('<div class="todo-item draggable"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"><label></label><input type="text" class="todo-input"></div>');
 
 	$('.container').on('click', function() {
 		var el = $(listItem).clone().appendTo('.container');
