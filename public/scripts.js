@@ -1,13 +1,18 @@
 (function($) {
 
+	var listItem = $('<input type="checkbox" name="checkbox" id="checkbox_id" value="value"><input type="text" class="todo-input">');
+
 	$('.container').on('click', function() {
-		$(this).append('<input type="checkbox" name="checkbox" id="checkbox_id" value="value"><input type="text" class="todo-input">');
+		$(listItem).clone()
+		.keyup(function(e) {
+			if (e.keyCode === 13) {
+				var text = $(this).val();
+				$(this).replaceWith('<span>' + text + '</span>');
+			}
+		})
+		.appendTo('.container')
+		.wrap('<div class="draggable"></div>');
+		$('.draggable').draggable();
 	});
 
-	$('.todo-input').keyup(function (e) {
-		if (e.keyCode == 13){
-
-console.log('it works');
-		}
-	});
 })(jQuery);
