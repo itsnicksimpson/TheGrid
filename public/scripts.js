@@ -1,5 +1,7 @@
 (function($) {
-	$('h1').on('click', function() {
+
+	$('.container').on('click', function() {
 		$(this).append('<p>hello</p>');
 	});
+
 })(jQuery);
