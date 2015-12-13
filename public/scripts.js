@@ -1,6 +1,6 @@
 (function($) {
 
-	var listItem = $('<div class="draggable"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"><input type="text" class="todo-input"></div>');
+	var listItem = $('<div class="draggable"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"><label></label><input type="text" class="todo-input"></div>');
 
 	$('.container').on('click', function() {
 		var el = $(listItem).clone().appendTo('.container');
@@ -9,9 +9,17 @@
 				var text = $(this).val();
 				$(this).replaceWith('<span>' + text + '</span>');
 			}
-		})
+		});
 
 		$('.draggable').draggable();
+		el.find('label').on('click', function(e) {
+			if (el.find('input[type="checkbox"]').prop('checked') === true) {
+				el.find('input[type="checkbox"]').prop('checked', false);
+			}
+			else {
+				el.find('input[type="checkbox"]').prop('checked', true);
+			}
+		});
 	});
 
 })(jQuery);
