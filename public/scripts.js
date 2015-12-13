@@ -7,7 +7,7 @@
 		el.find('input[type="text"]').keyup(function(e) {
 			if (e.keyCode === 13) {
 				var text = $(this).val();
-				$(this).replaceWith('<span>' + text + '</span>');
+				$(this).replaceWith('<span class="todo-text">' + text + '</span>');
 			}
 		});
 
