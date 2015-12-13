@@ -15,7 +15,7 @@ h1 {
 
 .todo-item {
 	font-family: 'Open Sans', sans-serif;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
 /* Text input styling */
@@ -23,6 +23,8 @@ input[type="text"] {
 	border: none;
 	border-bottom: 1px solid black;
 	background: rgba(0, 0, 0, 0);
+	width: 75px;
+	height: 15px;
 }
 
 input[type="text"]:focus {

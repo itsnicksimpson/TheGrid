@@ -11,7 +11,9 @@
 			}
 		});
 
-		$('.draggable').draggable();
+		$('.draggable').draggable({
+			grid: [ 15, 15 ]
+		});
 		el.find('label').on('click', function(e) {
 			if (el.find('input[type="checkbox"]').prop('checked') === true) {
 				el.find('input[type="checkbox"]').prop('checked', false);
